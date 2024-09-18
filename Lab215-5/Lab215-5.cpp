@@ -6,23 +6,46 @@
 #include <string>
 
 using namespace std;
-string text;
+
 
 
 int main()
-
 {
 	vector<int> intVector({ 'V','F','X','B','L','I','T','Z','J','R','P','H','D','K','N','O','W','S','G','U','Y','Q','M','A','C','E' });
-	cout << intVector[0] << endl;
 	cout << "Please enter a sentence: ";
+	string text;
 	getline(cin, text);
-	cout << text;
+	for (int idx = 0; idx < text.length(); idx++) 
+	{
+		char c = text[idx];
+		if ((c >= 65) && (c <= 90))
+		{
+			cout << char(intVector[c - 65]);
+		}
+		else if ((c >= 97) && (c <= 122))
+		{
+			int upperCaseLetter = (c - 32);
+			int upperCaseCode = char(upperCaseLetter - 65);
+			cout << char(intVector[upperCaseCode +32]);
+		}
+		else
+		{
+			cout << char(c);
+		}
 
+	}
 }
 
 
 
-
+//IF char IS BETWEEN 65 AND 90 //is a capital letter
+	//RETURN THE CHAR AT SLOT char - 65 IN CODE TABLE
+//ELSE IF char IS BETWEEN 97 AND 122 // is lower case letter
+	//SET upperCaseLetter TO char - 32 // converts the number to upper case number
+	//SET upperCaseCode TO CHAR AT SLOT upperCaseLetter - 65 IN CODE TABLE // get upper case code
+	//RETURN upperCaseCode + 32 // convert code back to lower case
+//ELSE // is not letter
+	//RETURN char
 
 
 
