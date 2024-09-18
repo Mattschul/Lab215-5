@@ -1,15 +1,22 @@
 // Lab215-5.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//CGT 215-5, practice with vectors and string, Matt Schuler Fall 2024
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
+string text;
+
 
 int main()
 
 {
 	vector<int> intVector({ 'V','F','X','B','L','I','T','Z','J','R','P','H','D','K','N','O','W','S','G','U','Y','Q','M','A','C','E' });
+	cout << intVector[0] << endl;
+	cout << "Please enter a sentence: ";
+	getline(cin, text);
+	cout << text;
 
 }
 
