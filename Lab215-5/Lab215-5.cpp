@@ -25,8 +25,10 @@ int main()
 		else if ((c >= 97) && (c <= 122))
 		{
 			int upperCaseLetter = (c - 32);
-			int upperCaseCode = char(upperCaseLetter - 65);
-			cout << char(intVector[upperCaseCode +32]);
+			char upperCaseCode = char(intVector[upperCaseLetter - 65]);
+			//ensure upperCaseCode type remains as char
+			upperCaseCode += 32;
+			cout << upperCaseCode;
 		}
 		else
 		{
@@ -35,21 +37,6 @@ int main()
 
 	}
 }
-
-
-
-//IF char IS BETWEEN 65 AND 90 //is a capital letter
-	//RETURN THE CHAR AT SLOT char - 65 IN CODE TABLE
-//ELSE IF char IS BETWEEN 97 AND 122 // is lower case letter
-	//SET upperCaseLetter TO char - 32 // converts the number to upper case number
-	//SET upperCaseCode TO CHAR AT SLOT upperCaseLetter - 65 IN CODE TABLE // get upper case code
-	//RETURN upperCaseCode + 32 // convert code back to lower case
-//ELSE // is not letter
-	//RETURN char
-
-
-
-
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
